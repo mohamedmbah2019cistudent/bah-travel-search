@@ -1,4 +1,4 @@
-.Bah-Holiday-Travel
+.Bah-Travel-Search
 
 .Bah Travel Search was created for those who want to take traveling in their own hand. With a easy to use map which can work on all devices. Travel is the perfect app for you who don't have time to waste. The app allows you to search in every area the best and most popular hotels, pharmacy, museums, restaurants, bars and if you want take it to the next level, night clubs.
 
