@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+/*font-family: 'Roboto', sans-serif;*/
+
+/*------------------------------------------------------Navbar section*/
+.navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.bg-navbar{
+    background-color: #007bff;
+}
+
+img {
+    height:150px;
+    width: 150px;
+}
+.navbar-item{
+    letter-spacing: 0.5px;
+    padding-right:25px;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    padding-top: 15px;
+}
+a:hover {
+        color: #969498;
+    text-decoration: none;
+}
+/*------------------------------------------------------Information modal*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  text-align:center;
+  background-color: #e9ecef;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  font-size: 15px;
+  font-family: Roboto;
+}
+.modal-content ul li{
+  list-style-type: none;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.fas fa-info{
+  width: 30px;
+  height: 30px;
+}
+#myBtn{
+  background-color: #443552;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  width: 60px;
+  height: 50px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+/*------------------------------------------------------senEmail form*/
+.open-button {
+    background-color: #443552;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    width: 60px;
+    height: 50px;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+.far fa-envelope{
+  width: 30px;
+  height: 30px;
+}
+
+.close {
+    position: absolute;
+    font-weight: 900;
+    font-size: xx-large;
+    color: #1d0a2f;
+    top: -8px;
+    right: 1px;
+}
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom:  20%;
+    right: 35%;
+    border: 3px solid #f1f1f1;
+    border-radius: 5px;
+    z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #8dcaff;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #5780a4;
+}
+/*------------------------------------------------------filters section*/
+#filters{
+    padding: 10px;
+    background-color:#1d0a2f; 
+}
+
+.input-boxes{
+    border-radius: 5px;
+    padding: 10px;
+    color:#757575;
+    background-color: #d6d3d3;
+    text-align: left;
+    width: 100%;
+    height: 50px;
+}
+
+.radio-form{
+    color:white;
+    font-size: 15px;
+    font-style: sans-serif; 
+}
+
+.btn-default{
+   background-color: #ffc107;
+   color:white;
+   font-weight:500;
+   width: 100%;
+   height: 50px;
+}
+/*------------------------------------------------------map section*/
+
+#map {
+  min-height: 430px;
+}
+#map-section{ 
+  border-right: 1px solid #d0d0d0;
+}
+#section-heading{
+  width: 100%;
+  color: #4b4b4b;
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 25px;
+  font-weight: 800;
+  padding-bottom: 5px;
+  padding-top:15px;
+}
+/*------------------------------------------------------results section*/
+#results-section{
+ background-color: #d6d3d345;
+}
+#info-content .title {
+  font-weight: bold;
+}
+
+#listing{
+  margin-bottom: 25px;
+  height: 430px;
+  width: 100%;
+  overflow: scroll;
+  top: 0px;
+  cursor: pointer;
+}
+.placeIcon {
+  width: 20px;
+  height: 34px;
+  margin: 4px;
+}
+.hotelIcon {
+  width: 24px;
+  height: 24px;
+  color: green;
+}
+#resultsTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#rating {
+  font-size: 13px;
+  font-family: sans-serif;
+}
+.iw_table_row {
+  height: 18px;
+}
+.iw_attribute_name {
+  font-weight: bold;
+  text-align: right;
+}
+.iw_table_icon {
+  text-align: right;
+}
+/*------------------------------------------------------footer*/
+#footer-details{
+    background-color: #007bff;
+    padding: 0;
+    margin: 0;
+    min-height: 80px;
+}
+
+#author-rights{
+    width: 100%;
+    text-align: center;
+    color: #694b4b;
+    font-size: 15px;
+    font-family: Roboto;
+    padding-top: 50px;
+    font-weight: 500;
+}
+
+
+
+
+/*------------------------------------------------------media queries*/
+@media screen and (min-width: 320px)and (max-width: 374px){
+  
+  .open-button {
+    margin-right: 30px;}
+    
+  .form-popup {
+    center: 20%;
+    right: 15%;}
+}
+
+@media screen and (min-width: 375px){
+    .form-popup {
+      center: 20%;
+      right: 22%;
+    }
+    .open-button {
+    margin-right: 30px;}
+}
+@media screen and (min-width: 568px){
+    .form-popup {
+      center: -15%;
+      right: 30%;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 731px){
+    .form-popup {
+      center: 5%;
+      right: 30%;
+    }
+}
+@media screen and (min-width: 667px){
+    .form-popup {
+      center: -15%;
+      right: 30%;
+    }
+}
+@media screen and (min-width: 734px) and (max-width: 737px){
+    .form-popup {
+      center: -10%;
+      right: 30%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width:811px){
+    .form-popup {
+      center: 20%;
+      right: 35%;
+    }
+}
+@media screen and (min-width: 812px) and (max-width:1023px){
+    .form-popup {
+      center: -1%;
+      right: 30%;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width:1030px) {
+    .form-popup {
+      center: 30%;
+      right: 40%;
+    }
+}
+@media screen and (min-width: 1366px) and (max-width:1441px){
+    .form-popup {
+      center: 30%;
+      right: 40%;
+    }
+}
+@media screen and (min-width: 1450px) and (max-width:2560px){
+    .form-popup {
+      center: 30%;
+      right: 40%;
+    }
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
