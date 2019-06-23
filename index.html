@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Favicon-->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <!--jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--bootstrap-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--popper-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <!--CSS file-->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+    <!-- js file -->
+    <script src="assets/js/map.js"></script>
+    <script src="assets/js/sendEmail.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_2SDherDKwxQ4B8qdnSyC6");
+        })();
+    </script>
+
+    <title>Bah Travel Search</title>
+</head>
+
+<body>
+    <header>
+        <!--bar section-->
+        <nav class="navbar bg-navbar">
+            <div class="col-6">
+                <img src="assets/images/beautyicon.png">
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <button id="myBtn"><i class="fas fa-info"></i></button>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Hi Traveller! <br> Welcome to <b>Bah Travel Search.</b></h2>
+                            <p>Look into all the tourist attractions you would want to visit:
+                                <ul>
+                                    <li>Accomodation</li>
+                                    <li>Restaurants</li>
+                                    <li>Touristic places</li>
+                                    <li>Transportation</li>
+                                    <li>Healthcare centers</li>
+                                </ul>
+                            </p>
+                            <p>Let's plan your next trip!</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <button class="open-button" onclick="openForm()"><i class="far fa-envelope"></i>Open Form</button>
+                    <div class="form-popup" id="myForm">
+                        <span class="close" onclick="closeForm()">×</span>
+                        <form class="form-container" onsubmit="return sendMail(this);" method="POST">
+                            <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
+                            <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email" required />
+                            <textarea rows="5" name="projectsummary" id="projectsummary" class="form-control" placeholder="Let's plan your next trip!" required></textarea>
+                            <input type="submit" class="submitContact" value="Submit" />
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!--filters section-->
+        <div id="filters" class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    <select id="country" class="input-boxes">Country
+                        <option value="all" selected>Select a Country</option>
+                        <option value="au">Australia</option>
+                        <option value="br">Brazil</option>
+                        <option value="ca">Canada</option>
+                        <option value="fr">France</option>
+                        <option value="de">Germany</option>
+                        <option value="it">Italy</option>
+                        <option value="mx">Mexico</option>
+                        <option value="nz">New Zeland</option>
+                        <option value="ng">Nigeria</option>
+                        <option value="jp">Japan</option>
+                        <option value="za">South Africa</option>
+                        <option value="es">Spain</option>
+                        <option value="se">Sweden</option>
+                        <option value="us">U.S.A</option>
+                        <option value="uk">United Kingdom</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <input id="autocomplete" class="input-boxes" type="text" placeholder="Enter a City">
+                </div>
+                <div class="col-sm-3 ">
+                    <select class="form-control input-boxes" id="categories" onchange="search();">
+                        <option value="lodging">Hotels</option>
+                        <option value="restaurant">Restaurants</option>
+                        <option value="bar">Bar</option>
+                        <option value="museum">Museums</option>
+                        <option value="park" >Parks</option>
+                        <option value="shopping_mall" >Shopping Malls</option>
+                        <option value="night_club" >Night Clubs</option>
+                        <option value="car_rental" >Car Rentals</option>
+                        <option value="taxi_stand" >Taxi stands</option>
+                        <option value="train_station" >Train Stations</option>
+                        <option value="hospital" >Hospitals</option>
+                        <option value="pharmacy" >Pharmacies</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <button id="reset-button" type="button" class="btn btn-default" onclick="reset()">Reset</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--map & result section-->
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="map-section" class="col-xs-12 col-sm-8 col-md-8 ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 id="section-heading">Map</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="results-section" class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 id="section-heading">Results</h3>
+                        </div>
+                    </div>
+                    <div id="listing">
+                        <table id="resultsTable">
+                            <tbody id="results"></tbody>
+                        </table>
+                    </div>
+                    <div style="display:none">
+                        <div id="info-content">
+                            <table>
+                                <tr id="iw-url-row" class="iw_table_row">
+                                    <td id="iw-icon" class="iw_table_icon">icon</td>
+                                    <td id="iw-url"></td>
+                                </tr>
+                                <tr id="iw-address-row" class="iw_table_row">
+                                    <td class="iw_attribute_name">Address:</td>
+                                    <td id="iw-address"></td>
+                                </tr>
+                                <tr id="iw-phone-row" class="iw_table_row">
+                                    <td class="iw_attribute_name">Telephone:</td>
+                                    <td id="iw-phone"></td>
+                                </tr>
+                                <tr id="iw-rating-row" class="iw_table_row">
+                                    <td class="iw_attribute_name">Rating:</td>
+                                    <td id="iw-rating"></td>
+                                </tr>
+                                <tr id="iw-website-row" class="iw_table_row">
+                                    <td class="iw_attribute_name">Website:</td>
+                                    <td id="iw-website"></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--footer section-->
+    <footer id="footer-details" class="container-fluid">
+        <div class="row">
+            <p id="author-rights"><i class="far fa-copyright"></i> Copyright 2019 - Mohamed Marifa Bah</p>
+        </div>
+
+    </footer>
+
+    <script>
+    </script>
+
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5wwCzdlsisuyRJ4tNWcNikuF2zezys84&amp;libraries=places&amp;callback=initMap" async="" defer=""></script>
+
+
+</body>
+<script type="text/javascript" src="assets/js/infomodal.js"></script>
+
+</html>
